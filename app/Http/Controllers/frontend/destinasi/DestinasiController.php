@@ -31,7 +31,7 @@ class DestinasiController extends Controller
 
     public function addToCart($id){
         $this->destinasiService->addToCart($id);
-        return redirect('/destinasi')->with('success', 'Product added to cart successfully!');
+        return redirect('/cart')->with('success', 'Product added to cart successfully!');
     }
 
     public function updateCart(Request $request){

@@ -36,6 +36,8 @@ Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
     Route::get('add-to-cart/{id}', [DestinasiController::class,'addToCart']);
     Route::patch('update-cart', [DestinasiController::class,'updateCart']);
     Route::delete('delete-cart', [DestinasiController::class,'deleteCart']);
+
+
     Route::post('checkout', [CheckoutController::class, 'checkOutCart']);
     Route::get('checkout-details', [CheckoutController::class, 'checkout']);
     Route::get('payment-notif', [NotifCheckoutController::class, 'paymentNotif']);

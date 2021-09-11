@@ -134,8 +134,7 @@
 @section('js')
     <script type="text/javascript"
     src="https://app.sandbox.midtrans.com/snap/snap.js"
-    data-client-key="SB-Mid-client-o8I3OwvAUrsBAk3N"></script>
-    {{-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment  --}}
+    data-client-key = config('apikey.midtrans.client_key')></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

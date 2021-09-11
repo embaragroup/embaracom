@@ -99,7 +99,7 @@
                                         <div class="form-group">
                                             <div class="d-flex">
                                                 <input type="file" name="detail_image[]" accept="detail_image/*" class="form-control" placeholder="Image" value="{{ isset($products) ? $products->detail_image : ''}}">
-                                                <button class="btn btn-danger btn-sm add" type="button"><i class="fas fa-trash"></i></button>
+                                                <button class="btn btn-danger btn-sm remove"><i class="fas fa-trash"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -246,8 +246,9 @@
                 var lsthmtl = $(".clone").html();
                 $(".detail_image").after(lsthmtl);
             });
-            $("body").on("click",".btn-danger",function(){
-                $(this).parents(".hide").remove();
+            $("body").on("click",".remove",function(e){
+                e.preventDefault();
+                $(this).parent('div').remove(); x--;
             });
         });
     </script>

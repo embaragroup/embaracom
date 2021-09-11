@@ -47,6 +47,11 @@ return [
             'hash' => false,
         ],
 
+        'users' => [
+            'driver' => 'session',
+            'provider' => 'users'
+        ],
+
         'agent' => [
             'driver' => 'session',
             'provider' => 'agents'
@@ -89,12 +94,12 @@ return [
         'admin-embaras' => [
             'driver' => 'eloquent',
             'model' => App\Models\AdminEmbara\AdminEmbara::class,
-        ]
+        ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
     ],
 
     /*

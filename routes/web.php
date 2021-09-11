@@ -37,10 +37,11 @@ Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
     Route::patch('update-cart', [DestinasiController::class,'updateCart']);
     Route::delete('delete-cart', [DestinasiController::class,'deleteCart']);
 
-
-    Route::post('checkout', [CheckoutController::class, 'checkOutCart']);
-    Route::get('checkout-details', [CheckoutController::class, 'checkout']);
-    Route::get('payment-notif', [NotifCheckoutController::class, 'paymentNotif']);
+    Route::middleware(['auth:users'])->group(function(){
+        Route::post('checkout', [CheckoutController::class, 'checkOutCart']);
+        Route::get('checkout-details', [CheckoutController::class, 'checkout']);
+        Route::get('payment-notif', [NotifCheckoutController::class, 'paymentNotif']);
+    });
 });
 
 // Backend

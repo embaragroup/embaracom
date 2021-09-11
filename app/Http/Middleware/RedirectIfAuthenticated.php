@@ -23,9 +23,13 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 return redirect('/admin');
             }
-        } else {
+        } elseif ($guard == 'admin-embara') {
             if (Auth::guard($guard)->check()) {
                 return redirect('/admin-embara');
+            }
+        } else {
+            if (Auth::guard($guard)->check()) {
+                return redirect('/home');
             }
         }
 

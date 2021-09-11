@@ -49,10 +49,12 @@ class Handler extends ExceptionHandler
 
         $guard = Arr::get($exception->guards(), 0);
 
-        $route = 'embara.login';
+        $route = 'login';
 
         if ($guard == 'agent') {
             $route = 'agent.login';
+        } elseif ($guard == 'admin-embara') {
+            $route = 'embara.login';
         }
 
         return redirect()->route($route);

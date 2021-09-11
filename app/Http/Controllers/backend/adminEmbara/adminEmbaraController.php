@@ -19,7 +19,7 @@ class adminEmbaraController extends Controller
     public function index()
     {
         $adminBackend = $this->adminEmbara->getAdminEmbara();
-        return view('backend.adminBackend.pages.dashboard.index', compact('adminBackend'));
+        return view('backend.admin-embara.pages.dashboard.index', compact('adminBackend'));
     }
 
     public function createBackend($id = null)
@@ -28,10 +28,10 @@ class adminEmbaraController extends Controller
 
         if ($id) {
             $result = $this->adminEmbara->findById($id);
-            return view('backend.adminBackend.pages.dashboard.create', compact('result', 'dataAdminEmbara'));
+            return view('backend.admin-embara.pages.dashboard.create', compact('result', 'dataAdminEmbara'));
         }
 
-        return view('backend.adminBackend.pages.dashboard.create');
+        return view('backend.admin-embara.pages.dashboard.create');
     }
 
     public function storeBackend(Request $request, $id = null)
@@ -50,6 +50,6 @@ class adminEmbaraController extends Controller
 
     public function agentIndex(){
         $dataAgent = Agent::all();
-        return view('backend.adminBackend.pages.agent.index', compact('dataAgent'));
+        return view('backend.admin-embara.pages.agent.index', compact('dataAgent'));
     }
 }

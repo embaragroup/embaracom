@@ -1,4 +1,4 @@
-@extends('backend.adminBackend.master-admin-backend')
+@extends('backend.admin-embara.master-admin-backend')
 @section('title', 'Embara Registration')
 
 @section('content')

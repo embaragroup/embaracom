@@ -19,12 +19,12 @@ class RajaOngkirController extends Controller
 
     public function indexProvinsi(){
         $dataProvinsi = Provinsi::all();
-        return view('backend.adminBackend.pages.provinsi.index', compact('dataProvinsi'));
+        return view('backend.admin-embara.pages.provinsi.index', compact('dataProvinsi'));
     }
 
     public function indexKota(){
         $dataKota = Kota::all();
-        return view('backend.adminBackend.pages.kota.index', compact('dataKota'));
+        return view('backend.admin-embara.pages.kota.index', compact('dataKota'));
     }
 
     public function getDataProvinsi(){

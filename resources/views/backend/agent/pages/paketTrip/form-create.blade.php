@@ -1,4 +1,4 @@
-@extends('backend.embara.master-admin-embara')
+@extends('backend.agent.master-admin-embara')
 @section('title', 'Index Paket Trip')
 
 @section('content')

@@ -9,12 +9,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('backend.embara.pages.dashboard.dashboard');
+        return view('backend.agent.pages.dashboard.dashboard');
     }
 
     // Backend Embara
     public function backendEmbara ()
     {
-        return view('backend.adminBackend.pages.dashboard.dashboard');
+        return view('backend.admin-embara.pages.dashboard.dashboard');
     }
 }

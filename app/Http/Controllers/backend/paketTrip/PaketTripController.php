@@ -19,7 +19,7 @@ class PaketTripController extends Controller
     public function index()
     {
         $products = $this->paketTripService->getAllPaketTrip(10);
-        return view('backend.embara.pages.paketTrip.index', compact('products'));
+        return view('backend.agent.pages.paketTrip.index', compact('products'));
     }
 
     public function formCreate($id = null)
@@ -29,9 +29,9 @@ class PaketTripController extends Controller
 
         if ($id) {
             $products = $this->paketTripService->findById($id);
-            return view('backend.embara.pages.paketTrip.form-create', compact('products','dataProvinsi','dataKategori'));
+            return view('backend.agent.pages.paketTrip.form-create', compact('products','dataProvinsi','dataKategori'));
         }
-        return view('backend.embara.pages.paketTrip.form-create', compact('dataProvinsi','dataKategori'));
+        return view('backend.agent.pages.paketTrip.form-create', compact('dataProvinsi','dataKategori'));
     }
 
     public function getDataKota($id){

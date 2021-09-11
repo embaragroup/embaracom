@@ -1,4 +1,4 @@
-@extends('backend.adminBackend.master-admin-backend')
+@extends('backend.admin-embara.master-admin-backend')
 @section('title', 'Index')
 
 @section('content')
@@ -14,32 +14,30 @@
     @endif
     <div class="card-body">
         <div class="add_button mb-4">
-            <a href="{{ url('/admin-embara/register-agent') }}" class="btn btn-primary">Add New</a>
+            <a href="{{ url('admin-embara/create-kategori') }}" class="btn btn-primary">Add New</a>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered text-nowrap" id="dataTable" width="100%" cellspacing="0">
                 <thead class="text-center">
                     <tr>
                         <th>No</th>
-                        <th>Nama Agent</th>
-                        <th>Email Agent</th>
+                        <th>Kategori Trip</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    @foreach ($dataAgent as $dA)
+                    @foreach ($data as $Ad)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $dA->name }}</td>
-                            <td>{{ $dA->email }}</td>
-                            {{-- <td>
+                            <td>{{ $Ad->kategori_trip }}</td>
+                            <td>
                                 <a href="{{ url('admin-embara/create-kategori', $Ad->id) }}" class="btn btn-sm btn-outline-success rounded-pill"><i
                                         class="fas fa-edit"></i>
                                     Edit</a>
                                 <a href="{{ url('admin-embara/deleteKategori', $Ad->id) }}"
                                     class="btn btn-sm btn-outline-danger rounded-pill"><i class="fas fa-trash-alt"></i>
                                     Delete</a>
-                            </td> --}}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

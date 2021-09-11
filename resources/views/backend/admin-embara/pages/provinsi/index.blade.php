@@ -1,9 +1,9 @@
-@extends('backend.adminBackend.master-admin-backend')
+@extends('backend.admin-embara.master-admin-backend')
 @section('title', 'Index')
 
 @section('content')
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Admin Embara</h1>
+<h1 class="h3 mb-2 text-gray-800">Provinsi Index</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     @if (Session::has('status'))
@@ -14,32 +14,21 @@
     @endif
     <div class="card-body">
         <div class="add_button mb-4">
-            <a href="{{ url('admin-embara/pageCreate') }}" class="btn btn-primary">Add New</a>
+            <a href="{{ url('/admin-embara/rajaongkir/getProvinsi') }}" class="btn btn-primary">Load Data Provinsi</a>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered text-nowrap" id="dataTable" width="100%" cellspacing="0">
                 <thead class="text-center">
                     <tr>
                         <th>No</th>
-                        <th>Company Name</th>
-                        <th>Copy Right</th>
-                        <th>Action</th>
+                        <th>Nama Provinsi</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    @foreach ($adminBackend as $Ad)
+                    @foreach ($dataProvinsi as $dP)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $Ad->company_name }}</td>
-                            <td>{{ $Ad->copyright }}</td>
-                            <td>
-                                <a href="{{ url('admin-embara/pageCreate', $Ad->id) }}"
-                                    class="btn btn-sm btn-outline-success rounded-pill"><i class="fas fa-edit"></i>
-                                    Edit</a>
-                                <a href="{{ url('admin-embara/delete', $Ad->id) }}"
-                                    class="btn btn-sm btn-outline-danger rounded-pill"><i class="fas fa-trash-alt"></i>
-                                    Delete</a>
-                            </td>
+                            <td>{{ $dP->province }}</td>
                         </tr>
                     @endforeach
                 </tbody>

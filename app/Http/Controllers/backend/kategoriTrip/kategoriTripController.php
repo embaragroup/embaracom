@@ -19,7 +19,7 @@ class kategoriTripController extends Controller
     public function index()
     {
         $data = $this->kategoriService->getDataKategori();
-        return view('backend.adminBackend.pages.kategori-trip.index', compact('data'));
+        return view('backend.admin-embara.pages.kategori-trip.index', compact('data'));
     }
 
     public function createKategori($id = null)
@@ -28,10 +28,10 @@ class kategoriTripController extends Controller
 
         if ($id) {
             $result = $this->kategoriService->findById($id);
-            return view('backend.adminBackend.pages.kategori-trip.create', compact('dataKategoriTrip', 'result'));
+            return view('backend.admin-embara.pages.kategori-trip.create', compact('dataKategoriTrip', 'result'));
         }
 
-        return view('backend.adminBackend.pages.kategori-trip.create');
+        return view('backend.admin-embara.pages.kategori-trip.create');
     }
 
     public function storeKategori(Request $request, $id = null)

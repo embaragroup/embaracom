@@ -29,7 +29,7 @@ class AuthEmbaraController extends Controller
 
     public function Login()
     {
-        return view('backend.adminBackend.pages.auth.login');
+        return view('backend.admin-embara.pages.auth.login');
     }
 
     public function username()

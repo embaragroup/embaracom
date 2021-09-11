@@ -1,4 +1,4 @@
-@extends('backend.embara.pages.auth.master-auth')
+@extends('backend.admin-embara.pages.auth.master-auth')
 @section('title', 'Embara Registration')
 
 @section('content')
@@ -9,10 +9,10 @@
             <div class="login100-pic js-tilt mt-4" data-tilt style="margin-left: 40px">
                 <img src="{{ asset('assets/login-register-backend/images/logo-embara.png') }}" alt="IMG">
             </div>
-            <form class="login100-form validate-form" action="{{ url('admin/login/post') }}" method="POST">
+            <form class="login100-form validate-form" action="{{ url('admin-embara/login/post') }}" method="POST">
                 @csrf
                 <span class="login100-form-title">
-                    Agent Login
+                    Admin Embara Login
                 </span>
                 @if (Session::has('status'))
                     <div class="alert alert-{{ Session::get('alert-class', 'info') }} alert-dismissible fade show" role="alert">

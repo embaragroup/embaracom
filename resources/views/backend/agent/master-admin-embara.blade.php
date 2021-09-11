@@ -28,7 +28,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        @include('backend.embara.layouts.sidebar')
+        @include('backend.agent.layouts.sidebar')
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -36,7 +36,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                @include('backend.embara.layouts.menu')
+                @include('backend.agent.layouts.menu')
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -49,7 +49,7 @@
             </div>
             <!-- End of Main Content -->
 
-            @include('backend.embara.layouts.footer')
+            @include('backend.agent.layouts.footer')
 
         </div>
         <!-- End of Content Wrapper -->
@@ -62,7 +62,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    @include('backend.embara.layouts.logoutmodal')
+    @include('backend.agent.layouts.logoutmodal')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('assets/admin/vendor/jquery/jquery.min.js')}}"></script>

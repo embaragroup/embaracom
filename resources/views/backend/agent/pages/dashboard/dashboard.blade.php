@@ -1,4 +1,4 @@
-@extends('backend.adminBackend.master-admin-backend')
+@extends('backend.agent.master-admin-embara')
 @section('title', 'Dashboard')
 @section('content')
 <!-- Page Heading -->
@@ -7,7 +7,6 @@
     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
-
 
 <!-- Content Row -->
 <div class="row">

@@ -29,7 +29,7 @@ class AuthAgentController extends Controller
 
     public function Login()
     {
-        return view('backend.embara.pages.auth.login');
+        return view('backend.agent.pages.auth.login');
     }
 
     public function username()

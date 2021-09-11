@@ -17,7 +17,7 @@ class RegisterAgentController extends Controller
 
     public function registerAgent()
     {
-        return view('backend.adminBackend.pages.agent.register');
+        return view('backend.admin-embara.pages.agent.register');
     }
 
     public function registerAgentPost(Request $request)

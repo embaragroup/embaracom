@@ -16,9 +16,7 @@
       </div>
 
       <div class="request-form">
-        <div class="row">
             @include('frontend.layouts.filterPaket')
-        </div>
       </div>
 
 

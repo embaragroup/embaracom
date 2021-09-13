@@ -48,20 +48,14 @@
     <!-- Banner Ends Here -->
 
     <div class="request-form">
-      <div class="row">
         <div class="col-md-12">
           <div class="line text-center">
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
               <div class="filter_1">
                 <label id="paketTrip" class="btn btn-outline-white" for="btncheck2"><i class="fa fa-suitcase" aria-hidden="true"></i> Paket Trip</label>
-
                 <label id="pesawat" class="btn btn-outline-white" for="btncheck3"><i class="fa fa-plane" aria-hidden="true"></i> Tiket pesawat </label>
-
                 <label id="hotel" class="btn btn-outline-white" for="btncheck1"><i class="fa fa-bed" aria-hidden="true"></i> Hotel</label>
-
-
                 <label id="transport" class="btn btn-outline-white" for="btncheck3"><i class="fa fa-car" aria-hidden="true"></i> Transportasi</label>
-
               </div>
             </div>
           </div>
@@ -75,7 +69,6 @@
 
         @include('frontend.layouts.filterHotel')
 
-      </div>
     </div>
 
     <div class="services">

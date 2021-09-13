@@ -15,16 +15,6 @@ use App\Http\Controllers\frontend\home\HomeController;
 use App\Http\Controllers\frontend\checkout\NotifCheckoutController;
 use App\Http\Controllers\frontend\order\OrderController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Front Route
 Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
@@ -97,7 +87,3 @@ Route::group(['prefix' => 'admin-embara', 'namespace' => 'backend'], function(){
         Route::get('/rajaongkir/getKota', [RajaOngkirController::class, 'getDataKota']);
     });
 });
-
-
-
-

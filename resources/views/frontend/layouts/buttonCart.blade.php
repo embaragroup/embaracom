@@ -9,11 +9,13 @@
         position: fixed;
         bottom: 300px;
         right: -35px;
+        z-index: 1000;
+        border: 2px solid white
     }
 </style>
 
 <a href="{{ url('cart') }}" id="button-cart" class="btn btn-primary" >
-    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i> <strong>Cart</strong>
     <span class="badge badge-pill badge-danger">
         {{ count((array) session('cart')) }}
     </span>

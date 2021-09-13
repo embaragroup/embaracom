@@ -34,6 +34,7 @@
 
     @include('frontend.layouts.header')
 
+    @include('frontend.layouts.buttonCart')
     @yield('content')
 
     @include('frontend.layouts.footer')

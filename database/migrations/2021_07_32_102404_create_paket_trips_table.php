@@ -15,6 +15,7 @@ class CreatePaketTripsTable extends Migration
     {
         Schema::create('paket_trips', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('agent_id');
             $table->string('title');
             $table->bigInteger('province_id')->unsigned();
             $table->bigInteger('city_id')->unsigned();

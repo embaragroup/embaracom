@@ -1,5 +1,5 @@
 @extends('frontend.auth.master-auth')
-@section('title', 'Embara registration')
+@section('title', 'Registrasi')
 @section('content')
 <div class="limiter">
   <div class="container-login100" style="background-image: url('assets/login-register-frontend/images/bg-01.jpg');">
@@ -10,17 +10,35 @@
           Daftar
         </span>
 
-        <div class="wrap-input100 validate-input m-b-10" data-validate = "Username wajib di isi">
-          <span class="label-input100">Username</span>
-          <input class="input100" type="text" name="name" placeholder="Masukan username">
+        <div class="wrap-input100 validate-input m-b-10" data-validate = "First name wajib di isi">
+          <span class="label-input100">First Name</span>
+          <input class="input100" type="text" name="first_name" placeholder="Masukan first name">
           <span class="focus-input100" data-symbol="&#xf206;"></span>
         </div>
 
-        <div class="wrap-input100 validate-input m-b-10" data-validate = "Email wajib di isi">
-          <span class="label-input100">Email</span>
-          <input class="input100" type="email" name="email" placeholder="Masukan email">
-          <span class="focus-input100" data-symbol="&#x2709;"></span>
+        <div class="wrap-input100 validate-input m-b-10" data-validate = "Last name wajib di isi">
+            <span class="label-input100">Last Name</span>
+            <input class="input100" type="text" name="last_name" placeholder="Masukan last name">
+            <span class="focus-input100" data-symbol="&#xf206;"></span>
         </div>
+
+        <div class="wrap-input100 validate-input m-b-10" data-validate = "Email wajib di isi">
+            <span class="label-input100">Email</span>
+            <input class="input100" type="email" name="email" placeholder="Masukan email">
+            <span class="focus-input100" data-symbol="&#x2709;"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-10" data-validate = "Alamat wajib di isi">
+            <span class="label-input100">Alamat</span>
+            <input class="input100" type="text" name="alamat" placeholder="Masukan alamat">
+            <span class="focus-input100" data-symbol="&#xf206;"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-23" data-validate = "Phone wajib di isi">
+            <span class="label-input100">Phone</span>
+            <input class="input100" type="number" name="phone" placeholder="Masukan nomer telephone">
+            <span class="focus-input100" data-symbol="&#x260F;"></span>
+          </div>
 
         <div class="wrap-input100 validate-input m-b-10" id="div-password" data-validate="Password wajib di isi">
           <span class="label-input100">Password</span>
@@ -32,12 +50,6 @@
           <span class="label-input100">Confirm Password</span>
           <input class="input100" type="password" id="confirm-password" placeholder="Masukan konfirmasi password">
           <span class="focus-input100" data-symbol="&#xf190;"></span>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate = "Phone wajib di isi">
-          <span class="label-input100">Phone</span>
-          <input class="input100" type="number" name="phone" placeholder="Masukan nomer telephone">
-          <span class="focus-input100" data-symbol="&#x260F;"></span>
         </div>
 
         <div class="row mb-3">
@@ -82,10 +94,10 @@
     if ($(this).val().replace(/ /g,'').length < 8){
     console.log('masuk')
       $('#div-password').addClass('alert-validate').attr('data-validate', 'Min 8 characters')
-    
+
     }else{
       $('#div-password').removeClass('alert-validate')
     }
   })
-</script> 
+</script>
 @endpush

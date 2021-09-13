@@ -21,6 +21,7 @@
                         <form action="{{ url('admin/save-pakettrip') }}" enctype="multipart/form-data" method="POST">
                             @csrf
                             <div class="row">
+                                <input class="d-none" type="text" name="agent_id" value="{{Auth::user()->id}}">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                     <div class="form-group">
                                         <label for="title">Judul</label>

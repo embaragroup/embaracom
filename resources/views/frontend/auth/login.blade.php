@@ -1,5 +1,5 @@
 @extends('frontend.auth.master-auth')
-@section('title', 'Embara registration')
+@section('title', 'Login')
 @section('content')
 <div class="limiter">
     <div class="container-login100" style="background-image: url('assets/login-register-frontend/images/bg-01.jpg');">
@@ -38,6 +38,16 @@
                         </a>
                     </div>
                 </div>
+
+                @if (Route::has('password.request'))
+                    <div class="row my-4">
+                        <div class="col-12 text-center">
+                            <a href="{{ route('password.request') }}">
+                                Lupa Password
+                            </a>
+                        </div>
+                    </div>
+                @endif
 
                 <div class="container-login100-form-btn">
                     <div class="wrap-login100-form-btn">

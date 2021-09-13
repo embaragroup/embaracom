@@ -5,7 +5,6 @@ use App\Http\Controllers\backend\auth\AuthAgentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\paketTrip\PaketTripController;
-use App\Http\Controllers\backend\auth\AuthController;
 use App\Http\Controllers\backend\auth\AuthEmbaraController;
 use App\Http\Controllers\backend\kategoriTrip\kategoriTripController;
 use App\Http\Controllers\backend\rajaOngkir\RajaOngkirController;
@@ -14,7 +13,7 @@ use App\Http\Controllers\frontend\checkout\CheckoutController;
 use App\Http\Controllers\frontend\destinasi\DestinasiController;
 use App\Http\Controllers\frontend\home\HomeController;
 use App\Http\Controllers\frontend\checkout\NotifCheckoutController;
-use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\frontend\order\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,14 +31,15 @@ Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
     Route::get('home', [HomeController::class, 'index']);
     Route::get('destinasi', [DestinasiController::class, 'index']);
     Route::get('destinasi-details/{id?}', [DestinasiController::class,'details']);
-    Route::get('cart', [DestinasiController::class,'cart']);
+    Route::get('cart', [DestinasiController::class,'cart'])->name('cart');
     Route::get('add-to-cart/{id}', [DestinasiController::class,'addToCart']);
     Route::patch('update-cart', [DestinasiController::class,'updateCart']);
     Route::delete('delete-cart', [DestinasiController::class,'deleteCart']);
 
-    Route::middleware(['auth:users'])->group(function(){
+    Route::middleware(['auth'])->group(function(){
         Route::post('checkout', [CheckoutController::class, 'checkOutCart']);
         Route::get('checkout-details', [CheckoutController::class, 'checkout']);
+        Route::post('order', [OrderController::class, 'PostOrder']);
         Route::get('payment-notif', [NotifCheckoutController::class, 'paymentNotif']);
     });
 });

@@ -53,25 +53,28 @@
                 <li class="nav-item">
                   <a class="nav-link" href="packages.html">Tentang Kami</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Hubungi Kami</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <button type="button" class="btn btn-info" data-toggle="dropdown">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                    </button>
-                    <div class="dropdown-menu" style="width: 230px;">
+                @auth
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->first_name}}</a>
 
-                        @php $total = 0 @endphp
-                        @foreach((array) session('cart') as $id => $details)
-                            @php $total += $details['price'] * $details['quantity'] @endphp
-                        @endforeach
-                        <p class="text-center">Total Pesananan: <span class="text-info">Rp. {{ number_format($total) }}</span></p>
-                        <div class="text-center">
-                            <a href="{{ url('cart') }}" class="btn btn-primary" style="border-radius: 25px">Lihat Detail Keranjang</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="about.html">Profile</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a href="{{ route('login') }}" class="nav-link">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('register') }}" class="nav-link">Register</a>
+                    </li>
+            @endauth
               </ul>
             </div>
           </div>

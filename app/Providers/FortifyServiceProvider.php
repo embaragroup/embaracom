@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
+use App\Http\Responses\LoginResponse;
+use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -53,5 +56,20 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('frontend.auth.login');
         });
+
+        Fortify::requestPasswordResetLinkView(function() {
+            return view('frontend.auth.forgot-password');
+        });
+
+        Fortify::resetPasswordView(function($request) {
+            return view('frontend.auth.confirm-password', ['request' => $request]);
+        });
+
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\LogoutResponse::class,
+            \App\Http\Responses\LogoutResponse::class,
+        );
+
+        $this->app->singleton(LoginResponseContract::class, LoginResponse::class);
     }
 }

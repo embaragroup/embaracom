@@ -3,12 +3,12 @@
 namespace App\Repositories\PaketTrip;
 
 use App\Models\PaketTrip\PaketTrip;
-
+use Illuminate\Support\Facades\Auth;
 class PaketTripRepository{
 
     public function getAllPaketTrip($paginate)
     {
-        $data = PaketTrip::with(['Provinsi', 'City', 'KategoriTrip']);
+        $data = PaketTrip::where('agent_id', Auth::user()->id)->with(['Provinsi', 'City', 'KategoriTrip']);
         if ($paginate > 0) {
             return $data->paginate($paginate);
         }

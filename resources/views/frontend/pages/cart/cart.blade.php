@@ -30,11 +30,12 @@
                     @foreach(session('cart') as $id => $details)
                         @php $total += $details['price'] * $details['quantity'] @endphp
                         <tr data-id="{{ $id }}">
+                <form action="{{url('/checkout')}}" method="POST">
+                @csrf
                             <td data-th="Product">
                                 <div class="row">
-                                    <div class="col-sm-3 hidden-xs"><img src="{{ $details['image'] }}" width="100" height="100" class="img-responsive"/></div>
                                     <div class="col-sm-9">
-                                        <h4 class="nomargin" style="font-size: 20px; font-weight: 600; color: #1e1e1e;">{{ $details['name'] }}</h4>
+                                        <input type="text" class="form-control text-center" name="pesanan" value="{{ $details['name'] }}" readonly style="font-size: 20px; font-weight: 600; color: #1e1e1e;">
                                     </div>
                                 </div>
                             </td>
@@ -51,8 +52,6 @@
                 @endif
             </tbody>
             <tfoot>
-                <form action="{{url('/checkout')}}" method="POST">
-                    @csrf
                     <tr>
                         <td colspan="5" class="text-right"><h3><strong>Total: Rp.</strong>
                                 <input name="total" class="text-center" value="{{$total}}" readonly/>

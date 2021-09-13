@@ -53,81 +53,63 @@
             </div>
             <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Detail Personal</h4>
-            <form action="{{url('/order')}}" method="POST">
-                @csrf
+            <form>
                 <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" name="first_name" placeholder="" value="{{Auth::user()->first_name}}" required>
-                            <div class="invalid-feedback">
-                              Tambah First Name.
-                            </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="{{Auth::user()->first_name}}" required>
+                        <div class="invalid-feedback">
+                          Tambah First Name.
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="" value="{{Auth::user()->last_name}}" required>
-                            <div class="invalid-feedback">
-                              Tambah Last Name.
-                            </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="{{Auth::user()->last_name}}" required>
+                        <div class="invalid-feedback">
+                          Tambah Last Name.
                         </div>
+                    </div>
                     </div>
                     <div class="mb-3">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{Auth::user()->email}}" placeholder="you@example.com" required>
+                        <input type="email" class="form-control" id="email" value="{{Auth::user()->email}}" placeholder="you@example.com" required>
                         <div class="invalid-feedback">
                           Tambah Email.
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="phone">Nomor Telepon</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Alamat" value="{{Auth::user()->phone}}" required>
+                        <input type="text" class="form-control" id="phone" placeholder="Alamat" value="{{Auth::user()->phone}}" required>
                         <div class="invalid-feedback">
                           Tambah Alamat.
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="address">Alamat</label>
-                        <input type="text" class="form-control" id="address" name="alamat" placeholder="Alamat" value="{{Auth::user()->alamat}}" required>
+                        <input type="text" class="form-control" id="address" placeholder="Alamat" value="{{Auth::user()->alamat}}" required>
                         <div class="invalid-feedback">
                           Tambah Alamat.
                         </div>
                     </div>
-                    <input class="d-none" type="text" id="total" name="total" value="">
-                    <input class="d-none" type="text" id="pesanan" name="pesanan" value="">
-                    <input class="d-none" type="text" id="paid_at" name="paid_at" value="Belum Dibayar">
-                    </div>
-                    <hr class="mb-4">
                 </div>
-                <button type="submit" id="pay-button" class="btn btn-primary btn-lg btn-block mb-4">Continue to checkout</button>
+                <hr class="mb-4">
+                </div>
             </form>
+            <button id="pay-button" class="btn btn-primary btn-lg btn-block mb-4">Continue to checkout</button>
         </div>
     </div>
 </div>
 @endsection
 
 @section('js')
-    <script type="text/javascript"
-    src="https://app.sandbox.midtrans.com/snap/snap.js"
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
     data-client-key = config('apikey.midtrans.client_key')></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
             $('#pay-button').click(function() {
-                $.ajax({
-                    url: '/order',
-                    type: 'POST',
-                    success: function(data) {
-                        window.snap.pay('{{ Session::get('snapToken') }}');
-                    }
-                })
+                window.snap.pay('{{ Session::get('snapToken') }}');
             })
         })
-    </script>
-
-    <script>
-        document.getElementById('total').value = document.getElementById('totalCart').innerHTML;
-        document.getElementById('pesanan').value = document.getElementById('pesananCart').innerHTML;
     </script>
 @endsection

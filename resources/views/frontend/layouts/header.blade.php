@@ -50,8 +50,8 @@
                         <a class="dropdown-item" href="testimonials.html">Tour Guide</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="packages.html">Tentang Kami</a>
+                <li class="nav-item @yield('Tentang Kami')">
+                  <a class="nav-link" href="{{url('/tentang')}}">Tentang Kami</a>
                 </li>
                 @auth
                     <li class="nav-item dropdown">

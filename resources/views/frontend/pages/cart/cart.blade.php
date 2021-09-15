@@ -1,6 +1,12 @@
 @extends('frontend.master-front')
 @section('title', 'Pesanan')
 
+<style>
+    th{
+        font-size: 14px
+    }
+</style>
+
 @section('content')
     <div class="page-heading header-text">
         <div class="container">
@@ -13,15 +19,14 @@
         </div>
     </div>
     <div class="services">
-        <div class="container">
-            <table id="cart" class="table table-hover table-condensed">
+        <table id="cart" class="table table-hover table-condensed">
+            <div class="container">
                 <thead>
                     <tr>
-                        <th style="width:50%">Product</th>
-                        <th style="width:12%">Price</th>
-                        <th style="width:7%">Quantity</th>
-                        <th style="width:22%" class="text-center">Subtotal</th>
-                        <th style="width:10%"></th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,8 +80,8 @@
                     </tr>
                     </form>
                 </tfoot>
-            </table>
-        </div>
+            </div>
+        </table>
     </div>
 @endsection
 

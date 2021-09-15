@@ -2,63 +2,96 @@
 @section('title', 'Home')
 @section('home', 'active')
 
+<style>
+    .title {
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+    }
+    .title-in{
+        color: black;
+    }
+    .mb{
+        margin-bottom: 10px;
+        font-size: 15px;
+        color: rgb(2, 131, 2);
+        font-weight: bold;
+    }
+    @media (max-width: 414px) {
+        .title {
+            font-size: 20px;
+            color: black;
+        }
+    }
+
+
+</style>
+
 @section('content')
-        <!-- Page Content -->
+    <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="main-banner header-text" id="top">
         <div class="Modern-Slider">
-          <!-- Item -->
-          <div class="item item-1">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6>MERDEKA !!!</h6>
-                  <h4>DIRGAHAYU RI-76 <br> </h4>
-                  <p>Merdeka Merdeka Merdeka, kita rayakan HUT RI yang ini dengan Menikamti indahnya INDONESIA</p>
-                  <a href="packages.html" class="filled-button">Lihat Detail</a>
+            <!-- Item -->
+            <div class="item item-1">
+                <div class="img-fill">
+                    <div class="text-content">
+                        <h6>MERDEKA !!!</h6>
+                        <h4>DIRGAHAYU RI-76 <br> </h4>
+                        <p>Merdeka Merdeka Merdeka, kita rayakan HUT RI yang ini dengan Menikamti indahnya INDONESIA</p>
+                        <a href="packages.html" class="filled-button">Lihat Detail</a>
+                    </div>
                 </div>
             </div>
-          </div>
-          <!-- // Item -->
-          <!-- Item -->
-          <div class="item item-2">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6></h6>
-                  <h4>Fotografer & Videografer <br>  </h4>
-                  <p>Buat kamu yang Punya hobi foto, Dan bikin video. pas banget nih lagi ada penawaran spesial, Kamu bisa datengin 5 objek destinasi di indonesia dengan harga mulai 1 JUTA aja, penasarankan langsung cek aja</p>
-                  <a href="about.html" class="filled-button">Lihat</a>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item item-2">
+                <div class="img-fill">
+                    <div class="text-content">
+                        <h6></h6>
+                        <h4>Fotografer & Videografer <br> </h4>
+                        <p>Buat kamu yang Punya hobi foto, Dan bikin video. pas banget nih lagi ada penawaran spesial, Kamu
+                            bisa datengin 5 objek destinasi di indonesia dengan harga mulai 1 JUTA aja, penasarankan
+                            langsung cek aja</p>
+                        <a href="about.html" class="filled-button">Lihat</a>
+                    </div>
                 </div>
             </div>
-          </div>
-          <!-- // Item -->
-          <!-- Item -->
-          <div class="item item-3">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6>liburan keluarga</h6>
-                  <h4>KEPULAUAN SERIBU<br></h4>
-                  <p>Wisata kepulauan seribu identik dengan pengalaman snorkeling, diving dan aktifitas yang berhubungan dengan pantai lainnya. Buat momen yang mewakili pengalaman mu di KEPULAUAN SERIBU.</p>
-                  <a href="contact.html" class="filled-button">Lihat</a>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item item-3">
+                <div class="img-fill">
+                    <div class="text-content">
+                        <h6>liburan keluarga</h6>
+                        <h4>KEPULAUAN SERIBU<br></h4>
+                        <p>Wisata kepulauan seribu identik dengan pengalaman snorkeling, diving dan aktifitas yang
+                            berhubungan dengan pantai lainnya. Buat momen yang mewakili pengalaman mu di KEPULAUAN SERIBU.
+                        </p>
+                        <a href="contact.html" class="filled-button">Lihat</a>
+                    </div>
                 </div>
             </div>
-          </div>
-          <!-- // Item -->
+            <!-- // Item -->
         </div>
     </div>
     <!-- Banner Ends Here -->
 
     <div class="request-form">
         <div class="col-md-12">
-          <div class="line text-center">
-            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-              <div class="filter_1">
-                <label id="paketTrip" class="btn btn-outline-white" for="btncheck2"><i class="fa fa-suitcase" aria-hidden="true"></i> Paket Trip</label>
-                <label id="pesawat" class="btn btn-outline-white" for="btncheck3"><i class="fa fa-plane" aria-hidden="true"></i> Tiket pesawat </label>
-                <label id="hotel" class="btn btn-outline-white" for="btncheck1"><i class="fa fa-bed" aria-hidden="true"></i> Hotel</label>
-                <label id="transport" class="btn btn-outline-white" for="btncheck3"><i class="fa fa-car" aria-hidden="true"></i> Transportasi</label>
-              </div>
+            <div class="line text-center">
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <div class="filter_1">
+                        <label id="paketTrip" class="btn btn-outline-white" for="btncheck2"><i class="fa fa-suitcase"
+                                aria-hidden="true"></i> Paket Trip</label>
+                        <label id="pesawat" class="btn btn-outline-white" for="btncheck3"><i class="fa fa-plane"
+                                aria-hidden="true"></i> Tiket pesawat </label>
+                        <label id="hotel" class="btn btn-outline-white" for="btncheck1"><i class="fa fa-bed"
+                                aria-hidden="true"></i> Hotel</label>
+                        <label id="transport" class="btn btn-outline-white" for="btncheck3"><i class="fa fa-car"
+                                aria-hidden="true"></i> Transportasi</label>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
         @include('frontend.layouts.filterPaket')
@@ -72,34 +105,35 @@
     </div>
 
     <div class="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Semua <em>Perjalanan</em></h2>
-              <span>Pilih lokasi tujuan perjalananmu</span>
-            </div>
-          </div>
-          @foreach ($homePaketTrip as $allPaket)
-            <div class="col-md-4">
-              <div class="service-item">
-                <img src="{{ Storage::url($allPaket->cover_image) }}" alt="">
-                <div class="down-content">
-                  <h4>{{$allPaket->title}}</h4>
-                  <div style="margin-bottom:10px;">
-                    <span> <sup>Rp. </sup>{{number_format($allPaket->price)}}</span>
-                  </div>
-
-                  <p>Wisata Dengan Paket {{ $allPaket->range_date }}</p>
-
-                  <a href="{{url('destinasi-details/' . $allPaket->id)}}" class="filled-button">Lihat Detail</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <p class="title">Semua <em>Perjalanan</em></p>
+                        <span>Pilih lokasi tujuan perjalananmu</span>
+                    </div>
                 </div>
-              </div>
-              <br>
+                @foreach ($homePaketTrip as $allPaket)
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <img src="{{ Storage::url($allPaket->cover_image) }}" alt="">
+                            <div class="down-content">
+                                <h4>{{ $allPaket->title }}</h4>
+                                <div class="mb">
+                                    <span> <sup>Rp. </sup>{{ number_format($allPaket->price) }}</span>
+                                </div>
+
+                                <p>Wisata Dengan Paket {{ $allPaket->range_date }}</p>
+
+                                <a href="{{ url('destinasi-details/' . $allPaket->id) }}" class="filled-button">Lihat
+                                    Detail</a>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                @endforeach
             </div>
-          @endforeach
         </div>
-      </div>
     </div>
 
     <div class="services">
@@ -131,22 +165,22 @@
     </div>
 
     <div class="fun-facts">
-      <div class="container">
-        <div class="more-info-content">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="left-image">
-                <img src="assets/images/about-1-570x350.jpg" class="img-fluid" alt="">
-              </div>
+        <div class="container">
+            <div class="more-info-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="left-image">
+                            <img src="{{ asset('assets/user/images/about-1-570x350.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <div class="right-content">
+                            <div id="pixlee_container"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 align-self-center">
-              <div class="right-content">
-                <div id="pixlee_container"></div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
 @endsection
 

@@ -50,9 +50,9 @@
                                 <img src="{{ Storage::url($product->cover_image) }}" class="img-thumbnail" style="height:80px; width:100px"/>
                             </td>
                             <td>
-                                @foreach (json_decode($product->detail_image) as $image)
+                                {{-- @foreach (json_decode($product->detail_image) as $image)
                                     <img src="{{ Storage::url($image) }}" class="border" style="height:80px; width:100px"/>
-                                @endforeach
+                                @endforeach --}}
                             </td>
                             <td>
                                 <a href="{{ url('admin/create-pakettrip/'. $product->id) }}" class="btn btn-sm btn-outline-success rounded-pill"><i class="fas fa-edit"></i> Edit</a>

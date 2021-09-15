@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend\checkout;
 
 use App\Http\Controllers\Controller;
+use App\Models\Invoice\Invoice;
 use App\Models\Order\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,11 +38,16 @@ class CheckoutController extends Controller
         );
 
         Order::create([
+            'id' => $params['transaction_details']['order_id'],
             'first_name' => $params['customer_details']['first_name'],
             'email' => $params['customer_details']['email'],
             'pesanan' => $request['pesanan'],
             'total' => $params['transaction_details']['gross_amount'],
-            'paid_at' => 'Belum Dibayar'
+            'status' => 'Belum Dibayar'
+        ]);
+
+        Invoice::create([
+            'order_id' => $params['transaction_details']['order_id'],
         ]);
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);

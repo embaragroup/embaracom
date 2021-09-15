@@ -19,6 +19,7 @@ use App\Http\Controllers\frontend\order\OrderController;
 // Front Route
 Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
     Route::get('home', [HomeController::class, 'index']);
+    Route::get('tentang', [TentangKamiController::class, 'index']);
     Route::get('destinasi', [DestinasiController::class, 'index']);
     Route::get('destinasi-details/{id?}', [DestinasiController::class,'details']);
     Route::get('cart', [DestinasiController::class,'cart'])->name('cart');

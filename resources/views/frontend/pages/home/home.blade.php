@@ -103,67 +103,32 @@
     </div>
 
     <div class="services">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="section-heading">
-                <h2>Kategori <em>Trip</em></h2>
-                <span>Pilih kategori untuk Pesifikasi khusus</span>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="service-item">
-                <img src="assets/images/product-1-720x480.jpg" alt="">
-                <div class="down-content">
-                  <h4>KELUARGA</h4>
-                  <div style="margin-bottom:10px;">
-                    <span> <sup>Rp</sup>{{number_format(80000)}} - <sup>Rp</sup>{{number_format(1000000)}} </span>
-                  </div>
-
-                  <p>Liburan bersama keluarga jadi makin seru, Ciptakan momen istimewa bersama Keluarga anda, bersama kami</p>
-
-                  <a href="package-details.html" class="filled-button">Lihat Lainnya</a>
-                </div>
-              </div>
-
-              <br>
-            </div>
-            <div class="col-md-4">
-              <div class="service-item">
-                <img src="assets/images/product-2-720x480.jpg" alt="">
-                <div class="down-content">
-                  <h4>MUSIM</h4>
-                  <div style="margin-bottom:10px;">
-                    <span> <sup>Rp</sup>{{number_format(500000)}} - <sup>Rp</sup>{{number_format(1500000)}} </span>
-                  </div>
-
-                  <p>Nikmati liburan bersama bersama Kami, Pergi ketempat yang belum pernah anda kunjingi dan ciptakan momen spesial.</p>
-
-                  <a href="package-details.html" class="filled-button">Lihat Lainnya</a>
-                </div>
-              </div>
-
-              <br>
-            </div>
-            <div class="col-md-4">
-              <div class="service-item">
-                <img src="assets/images/product-3-720x480.jpg" alt="">
-                <div class="down-content">
-                  <h4>PELAJAR</h4>
-                  <div style="margin-bottom:10px;">
-                    <span> <sup>Rp</sup>{{number_format(150000)}} - <sup>Rp</sup>{{number_format(500000)}} </span>
-                  </div>
-
-                  <p>Traveling itu seperti universitas tanpa akhir. Dan Tidak semua ruang kelas memiliki empat dinding. Hidup adalah petualangan yang berani atau tidak sama sekali</p>
-
-                  <a href="package-details.html" class="filled-button">Lihat Lainnya</a>
-                </div>
-              </div>
-              <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Kategori <em>Trip</em></h2>
+              <span>Pilih kategori untuk spesifikasi khusus</span>
             </div>
           </div>
         </div>
+        <div class="row">
+          @if (count($kategoriTrip) > 0)
+            @foreach ($kategoriTrip as $item)
+              <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-2 px-1">
+                <div class="card">
+                  <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="..." height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $item->kategori_trip }}</h5>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          @endif
+        </div>
       </div>
+    </div>
 
     <div class="fun-facts">
       <div class="container">

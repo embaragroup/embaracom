@@ -22,19 +22,23 @@
                     <tr>
                         <th>No</th>
                         <th>Kategori Trip</th>
+                        <th>Gambar Kategori Trip</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    @foreach ($data as $Ad)
+                    @foreach ($kategoriTrip as $kategori)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $Ad->kategori_trip }}</td>
+                            <td>{{ $kategori->kategori_trip }}</td>
                             <td>
-                                <a href="{{ url('admin-embara/create-kategori', $Ad->id) }}" class="btn btn-sm btn-outline-success rounded-pill"><i
+                                <img src="{{ Storage::url($kategori->image) }}" class="border" style="height:80px; width:100px"/>
+                            </td>
+                            <td>
+                                <a href="{{ url('admin-embara/create-kategori', $kategori->id) }}" class="btn btn-sm btn-outline-success rounded-pill"><i
                                         class="fas fa-edit"></i>
                                     Edit</a>
-                                <a href="{{ url('admin-embara/deleteKategori', $Ad->id) }}"
+                                <a href="{{ url('admin-embara/deleteKategori', $kategori->id) }}"
                                     class="btn btn-sm btn-outline-danger rounded-pill"><i class="fas fa-trash-alt"></i>
                                     Delete</a>
                             </td>

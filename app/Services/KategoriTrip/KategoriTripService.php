@@ -4,6 +4,7 @@ namespace App\Services\KategoriTrip;
 
 use App\Models\PaketTrip\KategoriTrip;
 use App\Repositories\KategoriTrip\KategoriTripRepository;
+use Illuminate\Support\Facades\Storage;
 
 class KategoriTripService
 {
@@ -49,9 +50,19 @@ class KategoriTripService
                 if (!$findId) {
                     return returnCustom("Data does not exist!");
                 }
+
+                if (isset($data['image'])) {
+                    Storage::delete('public/'.$findId->image);
+                    $data['image'] = $request->file('image')->store('admin-embara/kategori-trip', 'public');
+                }
+
                 $findId->update($data);
                 return returnCustom('Category was successfully edited', true);
             } else {
+                if ($data['image']) {
+                    $data['image'] = $request->file('image')->store('admin-embara/kategori-trip', 'public');
+                }
+
                 KategoriTrip::create($data);
                 return returnCustom('Created Successfully', true);
             }

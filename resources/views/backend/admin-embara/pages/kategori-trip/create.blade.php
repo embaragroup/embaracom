@@ -23,8 +23,15 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="title">Kategori Trip</label>
-                                    <input type="text" name="kategori_trip" class="form-control" @error('kategori_trip')  is-invalid @enderror placeholder="Enter title" value="{{ isset($result) ? $result->kategori_trip : old('kategori_trip')}}" required>
+                                    <input type="text" name="kategori_trip" class="form-control @error('kategori_trip')  is-invalid @enderror" placeholder="Enter title" value="{{ isset($result) ? $result->kategori_trip : old('kategori_trip')}}" required>
                                     @error('kategori_trip')
+                                        <label class="text-danger">{{ $message }}</label>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" required>
+                                    @error('image')
                                         <label class="text-danger">{{ $message }}</label>
                                     @enderror
                                 </div>

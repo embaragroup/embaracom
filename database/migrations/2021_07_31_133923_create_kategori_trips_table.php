@@ -16,6 +16,7 @@ class CreateKategoriTripsTable extends Migration
         Schema::create('kategori_trips', function (Blueprint $table) {
             $table->id();
             $table->string('kategori_trip');
+            $table->string('image')->default('');
             $table->timestamps();
         });
     }

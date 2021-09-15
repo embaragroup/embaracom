@@ -18,8 +18,8 @@ class kategoriTripController extends Controller
 
     public function index()
     {
-        $data = $this->kategoriService->getDataKategori();
-        return view('backend.admin-embara.pages.kategori-trip.index', compact('data'));
+        $kategoriTrip = $this->kategoriService->getDataKategori();
+        return view('backend.admin-embara.pages.kategori-trip.index', compact('kategoriTrip'));
     }
 
     public function createKategori($id = null)

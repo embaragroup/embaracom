@@ -2,8 +2,19 @@
 @section('title', 'Pesanan')
 
 <style>
-    th{
+    th {
         font-size: 14px
+    }
+    .total{
+        font-size: 18px;
+    }
+    .text-transform{
+        text-transform: uppercase;
+    }
+    @media (max-width: 414px) {
+        .text-transform{
+            font-size: 14px !important;
+        }
     }
 </style>
 
@@ -19,14 +30,15 @@
         </div>
     </div>
     <div class="services">
-        <table id="cart" class="table table-hover table-condensed">
-            <div class="container">
+        <div class="container table-responsive">
+            <table id="cart" class="table table-hover table-condensed">
                 <thead>
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th class="text-center">Subtotal</th>
+                        <th>#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,13 +50,8 @@
                                 <form action="{{ url('/checkout') }}" method="POST">
                                     @csrf
                                     <td data-th="Product">
-                                        <div class="row">
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control text-center" name="pesanan"
-                                                    value="{{ $details['name'] }}" readonly
-                                                    style="font-size: 20px; font-weight: 600; color: #1e1e1e;">
-                                            </div>
-                                        </div>
+                                        <input type="text" class="form-control text-center" name="pesanan"
+                                            value="{{ $details['name'] }}" readonly>
                                     </td>
                                     <td data-th="Price">Rp. {{ number_format($details['price']) }}</td>
                                     <td data-th="Quantity">
@@ -64,23 +71,23 @@
                 <tfoot>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <h3><strong>Total: Rp.</strong>
-                                <input name="total" class="text-center" value="{{ $total }}" readonly />
-                            </h3>
+                            <p class="total"><strong>Total: Rp.</strong>
+                                <input name="total" class="text-center" value="{{ number_format($total) }}" readonly />
+                            </p>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{{ url('/destinasi') }}" class="filled-button"><i class="fa fa-angle-left"></i>
-                                Continue Shopping</a>
+                            <a href="{{ url('/destinasi') }}" class="btn btn-primary text-transform"><i class="fa fa-angle-left"></i>
+                                <strong>Continue Shopping</strong></a>
                             @if (session('cart'))
-                                <button type="submit" class="filled-checkout">Checkout</button>
+                                <button type="submit" class="btn btn-success text-transform"><strong>Checkout</strong></button>
                             @endif
                         </td>
                     </tr>
                     </form>
                 </tfoot>
-            </div>
+        </div>
         </table>
     </div>
 @endsection

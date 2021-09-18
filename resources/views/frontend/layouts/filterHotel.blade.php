@@ -26,7 +26,7 @@
                 </label>
 
                 <label for="btncheck2">
-                    <button class="btn btn-light"> <i class="fa fa-search" aria-hidden="true"></i> cari</button>
+                    <button class="btn btn-dark"> <i class="fa fa-search" aria-hidden="true"></i> Cari</button>
                 </label>
             </div>
         </div>

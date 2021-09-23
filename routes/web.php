@@ -14,6 +14,7 @@ use App\Http\Controllers\frontend\destinasi\DestinasiController;
 use App\Http\Controllers\frontend\home\HomeController;
 use App\Http\Controllers\frontend\checkout\NotifCheckoutController;
 use App\Http\Controllers\frontend\invoice\InvoiceController;
+use App\Http\Controllers\frontend\kategoriTrip\KategoriTripController as KategoriTripKategoriTripController;
 use App\Http\Controllers\frontend\order\OrderController;
 
 // Front Route
@@ -26,6 +27,8 @@ Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
     Route::get('add-to-cart/{id}', [DestinasiController::class,'addToCart']);
     Route::patch('update-cart', [DestinasiController::class,'updateCart']);
     Route::delete('delete-cart', [DestinasiController::class,'deleteCart']);
+    Route::get('kategori-trip', [KategoriTripKategoriTripController::class,'index']);
+    Route::get('kategori-trip/detail/{id?}', [KategoriTripKategoriTripController::class,'destinasi']);
 
     Route::middleware(['auth'])->group(function(){
         Route::post('checkout', [CheckoutController::class, 'checkOutCart']);

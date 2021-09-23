@@ -8,12 +8,12 @@ class KategoriTripRepository {
 
     public function getKategori()
     {
-        $dataAdmin = KategoriTrip::with([])->get();
+        $dataAdmin = KategoriTrip::all();
         return $dataAdmin;
     }
 
     public function findById($id)
     {
-        return KategoriTrip::with([])->find($id);
+        return KategoriTrip::find($id);
     }
 }

@@ -4,23 +4,19 @@
 namespace App\Repositories\Invoice;
 
 use App\Models\Invoice\Invoice;
-use App\Models\Order\Order;
 
 class InvoiceRepository {
 
-    public function DataOrderFirst(){
-        $order = Order::with([])->first();
+    public function getStatusTransaction(){
+        $status = isset($_GET['transaction_status']) ? $_GET['transaction_status'] : '';
 
-        $firstInvoice = Invoice::where('order_id', $order->id);
-
-        return $firstInvoice->first();
+        return $status;
     }
 
-    public function DataOrderGet(){
-        $order = Order::with([])->first();
+    public function DataOrderFirst(){
+        $orderIdUrl = isset($_GET['order_id']) ? $_GET['order_id'] : '';
+        $firstInvoice = Invoice::where('order_id', $orderIdUrl);
 
-        $getInvoice = Invoice::where('order_id', $order->id);
-
-        return $getInvoice->get();
+        return $firstInvoice->first();
     }
 }

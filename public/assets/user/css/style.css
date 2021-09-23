@@ -41,7 +41,7 @@ a.filled-button:hover {
 	color: #00AEEF;
 }
 
-button.filled-checkout {
+/* button.filled-checkout {
 	background-color: green;
 	color: #fff;
 	font-size: 13px;
@@ -58,7 +58,7 @@ button.filled-checkout {
 button.filled-checkout:hover {
 	background-color: #fff;
 	color: green;
-}
+} */
 
 a.border-button {
 	background-color: transparent;
@@ -84,7 +84,7 @@ a.border-button:hover {
 }
 
 .section-heading h2 {
-	font-size: 36px;
+	font-size: 38px;
 	font-weight: 600;
 	color: #1e1e1e;
 }

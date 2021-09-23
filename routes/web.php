@@ -16,6 +16,7 @@ use App\Http\Controllers\frontend\checkout\NotifCheckoutController;
 use App\Http\Controllers\frontend\invoice\InvoiceController;
 use App\Http\Controllers\frontend\kategoriTrip\KategoriTripController as KategoriTripKategoriTripController;
 use App\Http\Controllers\frontend\order\OrderController;
+use App\Http\Controllers\frontend\tentangKami\TentangKamiController;
 
 // Front Route
 Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){

@@ -5,6 +5,9 @@
     #paketfilter{
         text-align: center
     }
+    .form-select {
+        border-radius: 1rem;
+    }
     @media (max-width: 414px) {
         p {
             font-size: 14px;
@@ -16,7 +19,7 @@
         }
 
         .form-select {
-            font-size: 12px
+            font-size: 12px;
         }
         .text-align{
             text-align: left
@@ -55,7 +58,7 @@
             </label>
 
             <label class="btn-search">
-                <button class="btn btn-light"> <i class="fa fa-search" aria-hidden="true"></i> cari</button>
+                <button class="btn btn-dark"> <i class="fa fa-search" aria-hidden="true"></i> Cari</button>
             </label>
         </div>
     </div>

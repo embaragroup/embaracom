@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center text-150">
-                            <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
+                            <img width="150" height="150" src="{{asset('assets/user/images/logo-embara.png')}}" alt="">
                             <span class="text-default-d3">embara.com</span>
                         </div>
                     </div>
@@ -37,11 +37,11 @@
                     <div class="col-sm-6">
                         <div>
                             <span class="text-sm text-grey-m2 align-middle">Kepada:</span>
-                            <span class="text-600 text-110 text-blue align-middle">{{ $invoiceFirst->Order->first_name }}</span>
+                            <span class="text-600 text-110 text-blue align-middle">{{ $invoice->Order->first_name }}</span>
                         </div>
                         <div>
                             <span class="text-sm text-grey-m2 align-middle">Email:</span>
-                            <span class="text-600 text-110 text-blue align-middle">{{$invoiceFirst->Order->email}}</span>
+                            <span class="text-600 text-110 text-blue align-middle">{{$invoice->Order->email}}</span>
                         </div>
                     </div>
                     <!-- /.col -->
@@ -53,11 +53,11 @@
                                 Invoice
                             </div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Order Id: </span>{{ $invoiceFirst->order_id }}</div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Order Id: </span>{{ $invoice->order_id }}</div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Tanggal: </span>{{date('d-M-Y', strtotime($invoiceFirst->created_at))}}</div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Tanggal: </span>{{date('d-M-Y', strtotime($invoice->created_at))}}</div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">Unpaid</span></div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">{{$status}}</span></div>
                         </div>
                     </div>
                     <!-- /.col -->
@@ -73,7 +73,7 @@
                     <div class="text-95 text-secondary-d3">
                         <div class="row mb-2 mb-sm-0 py-25">
                             <div class="d-none d-sm-block col-1">1</div>
-                            <div class="col-9 col-sm-5">{{$invoiceFirst->Order->pesanan}}</div>
+                            <div class="col-9 col-sm-5">{{$invoice->Order->pesanan}}</div>
                             <div class="d-none d-sm-block col-2">2</div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                                     Total (IDR)
                                 </div>
                                 <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">{{number_format($invoiceFirst->Order->total)}}</span>
+                                    <span class="text-150 text-success-d3 opacity-2">{{number_format($invoice->Order->total)}}</span>
                                 </div>
                             </div>
                         </div>

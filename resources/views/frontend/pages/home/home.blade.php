@@ -8,23 +8,78 @@
         color: black;
         font-weight: bold;
     }
-    .title-in{
+
+    .title-destination {
+        color: black
+    }
+
+    .title-in {
         color: black;
     }
-    .mb{
+
+    .mb {
         margin-bottom: 10px;
         font-size: 15px;
         color: rgb(2, 131, 2);
         font-weight: bold;
     }
+
+    .card-radius {
+        padding: 1rem;
+        border-radius: 1.5rem !important;
+        background: white;
+        box-shadow: 0px 0px 10px -2px grey;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .btn-sm {
+        border-radius: 2rem !important;
+    }
+
+    .hr {
+        width: 100px;
+        border: 2px solid rgb(240, 218, 20);
+    }
+
+    .br-radius{
+        background: #00AEEF;
+        padding: 5rem;
+        z-index: 0;
+        border-bottom-left-radius: 79px;
+        border-bottom-right-radius: 79px;
+    }
+    .em{
+        color: rgb(240, 218, 20) !important;
+    }
+    .img{
+        height: 250px;
+    }
+
     @media (max-width: 414px) {
         .title {
             font-size: 20px;
             color: black;
         }
+        .font-size-h2{
+            font-size: 25px !important;
+        }
+        .services-color{
+            font-size: 14px !important;
+        }
+        .mt-top{
+            margin-top: 2rem;
+            margin-bottom: 7rem !important;
+        }
+        .br-radius{
+            padding: 1rem;
+        }
+        .hr{
+            margin-bottom: 1rem
+        }
     }
-
-
 </style>
 
 @section('content')
@@ -116,14 +171,14 @@
                 @foreach ($homePaketTrip as $allPaket)
                     <div class="col-md-4">
                         <div class="service-item">
-                            <img src="{{ Storage::url($allPaket->cover_image) }}" alt="">
+                            <img src="{{ Storage::url($allPaket->cover_image) }}" alt="Image Not Found" class="img">
                             <div class="down-content">
                                 <h4>{{ $allPaket->title }}</h4>
                                 <div class="mb">
                                     <span> <sup>Rp. </sup>{{ number_format($allPaket->price) }}</span>
                                 </div>
 
-                                <p>Wisata Dengan Paket {{ $allPaket->range_date }}</p>
+                                <p class="title-destination">Wisata Dengan Paket {{ $allPaket->range_date }}</p>
 
                                 <a href="{{ url('destinasi-details/' . $allPaket->id) }}" class="filled-button">Lihat
                                     Detail</a>
@@ -137,31 +192,40 @@
     </div>
 
     <div class="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Kategori <em>Trip</em></h2>
-              <span>Pilih kategori untuk spesifikasi khusus</span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          @if (count($kategoriTrip) > 0)
-            @foreach ($kategoriTrip as $item)
-              <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-2 px-1">
-                <div class="card">
-                  <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="..." height="200px">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ $item->kategori_trip }}</h5>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+        <div class="br-radius">
+            <div class="col-md-12">
+                <div class="section-heading mt-top">
+                    <h2 class="font-size-h2" style="color: white">Kategori <em class="em">Trip</em></h2>
+                    <span class="services-color" style="color: white">Pilih kategori untuk spesifikasi khusus</span>
+                    <hr class="hr">
                 </div>
-              </div>
-            @endforeach
-          @endif
+            </div>
         </div>
-      </div>
+        <div class="container" style="margin-top: -5rem">
+            <div class="row">
+                @if (count($kategoriTrip) > 0)
+                    @foreach ($kategoriTrip as $item)
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-1">
+                            <div class="card card-radius">
+                                <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="..."
+                                    height="200px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $item->kategori_trip }}</h5>
+                                    <hr>
+                                    <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+
+                <div class="col-md-12" style="margin-top: 3rem">
+                    <div class="section-heading">
+                        <a href="" class="btn btn-outline-dark"><strong>Read More</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="fun-facts">
@@ -170,7 +234,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="left-image">
-                            <img src="{{ asset('assets/user/images/about-1-570x350.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/user/images/about-1-570x350.jpg') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-6 align-self-center">

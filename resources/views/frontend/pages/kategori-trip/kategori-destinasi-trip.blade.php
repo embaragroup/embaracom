@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Destinasi Trip</h1>
-                    <span>Semua Destinasi Trip Di kategori {{ $paketTrip[0]->KategoriTrip->kategori_trip }}</span>
+                    <span>Semua Destinasi Trip Di kategori {{ count($paketTrip) > 0 ? $paketTrip[0]->KategoriTrip->kategori_trip : 'ini'}}</span>
                 </div>
             </div>
         </div>
@@ -32,25 +32,31 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($paketTrip as $destinasi)
-                    <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-2 px-2">
-                        <div class="service-item">
-                            <img src="{{ Storage::url($destinasi->cover_image) }}" alt="">
-                            <div class="down-content">
-                                <h4>{{ $destinasi->title }}</h4>
-                                <div class="mb">
-                                    <span> <sup>Rp. </sup>{{ number_format($destinasi->price) }}</span>
+                @if (count($paketTrip) > 0)
+                    @foreach ($paketTrip as $destinasi)
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-2 px-2">
+                            <div class="service-item">
+                                <img src="{{ Storage::url($destinasi->cover_image) }}" alt="">
+                                <div class="down-content">
+                                    <h4>{{ $destinasi->title }}</h4>
+                                    <div class="mb">
+                                        <span> <sup>Rp. </sup>{{ number_format($destinasi->price) }}</span>
+                                    </div>
+
+                                    <p><b>{{ $destinasi->range_date }}</b></p>
+
+                                    <a href="{{ url('destinasi-details/' . $destinasi->id) }}" class="filled-button">Lihat
+                                        Detail</a>
                                 </div>
-
-                                <p><b>{{ $destinasi->range_date }}</b></p>
-
-                                <a href="{{ url('destinasi-details/' . $destinasi->id) }}" class="filled-button">Lihat
-                                    Detail</a>
                             </div>
+                            <br>
                         </div>
-                        <br>
+                    @endforeach
+                @else
+                    <div class="col-lg-12 text-center mb-5">
+                        <h4>Belum ada destinasi dikategori ini</h4>
                     </div>
-                @endforeach
+                @endif
             </div>
         </div>
     </div>

@@ -25,9 +25,9 @@ class KategoriTripController extends Controller
     public function destinasi(Request $request, $id)
     {
         $paketTrip = $this->paketTripRepo->paketTripFindByKategoriTripId($id);
-        if (count($paketTrip) == 0) {
-            alertNotify(false, "Destinasi belum tersedia!", $request);
-        }
+        // if (count($paketTrip) == 0) {
+        //     alertNotify(false, "Destinasi belum tersedia!", $request);
+        // }
         return view('frontend.pages.kategori-trip.kategori-destinasi-trip', compact('paketTrip'));
     }
 }

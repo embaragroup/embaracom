@@ -34,19 +34,16 @@
             <div class="row">
                 @if (count($paketTrip) > 0)
                     @foreach ($paketTrip as $destinasi)
-                        <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-2 px-2">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12 py-2 px-2">
                             <div class="service-item">
-                                <img src="{{ Storage::url($destinasi->cover_image) }}" alt="">
+                                <img src="{{ Storage::url($destinasi->cover_image) }}" alt="Image Not Found" style="height: 250px;">
                                 <div class="down-content">
                                     <h4>{{ $destinasi->title }}</h4>
                                     <div class="mb">
                                         <span> <sup>Rp. </sup>{{ number_format($destinasi->price) }}</span>
                                     </div>
-
-                                    <p><b>{{ $destinasi->range_date }}</b></p>
-
-                                    <a href="{{ url('destinasi-details/' . $destinasi->id) }}" class="filled-button">Lihat
-                                        Detail</a>
+                                    <p class="title-destination text-dark">Wisata Dengan Paket {{ $destinasi->range_date }}</p>
+                                    <a href="{{ url('destinasi-details/' . $destinasi->id) }}" class="filled-button">Lihat Detail</a>
                                 </div>
                             </div>
                             <br>

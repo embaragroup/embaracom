@@ -2,6 +2,19 @@
 @section('title', 'Kategori Trip')
 @section('kategori','active')
 
+<style>
+    .card-radius {
+        padding: 1rem;
+        border-radius: 1.5rem !important;
+        background: white;
+        box-shadow: 0px 0px 10px -2px grey;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+</style>
+
 @section('content')
     <!-- Page Content -->
     <div class="page-heading header-text">
@@ -34,12 +47,14 @@
             <div class="row">
                 @if (count($kategoriTrip) > 0)
                     @foreach ($kategoriTrip as $item)
-                        <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-2 px-1">
-                            <div class="card">
-                                <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="..." height="200px">
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-12 py-1">
+                            <div class="card card-radius mb-2">
+                                <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="..."
+                                    height="200px">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $item->kategori_trip }}</h5>
-                                    <a href="{{ url('kategori-trip/detail/'.$item->id) }}" class="btn btn-primary">Lihat destinasi</a>
+                                    <hr>
+                                    <a href="{{ url('kategori-trip/detail/'.$item->id) }}" class="btn btn-primary btn-sm">Lihat destinasi</a>
                                 </div>
                             </div>
                         </div>

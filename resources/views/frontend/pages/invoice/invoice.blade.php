@@ -37,7 +37,7 @@
                     <div class="col-sm-6">
                         <div>
                             <span class="text-sm text-grey-m2 align-middle">Kepada:</span>
-                            <span class="text-600 text-110 text-blue align-middle">{{ $invoice->Order->first_name }}</span>
+                            {{-- <span class="text-600 text-110 text-blue align-middle">{{ $invoice->Order->first_name }} {{ $invoice->Order->last_name }}</span> --}}
                         </div>
                         <div>
                             <span class="text-sm text-grey-m2 align-middle">Email:</span>
@@ -53,11 +53,11 @@
                                 Invoice
                             </div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Order Id: </span>{{ $invoice->order_id }}</div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Order Id: </span>{{ $invoice->Order->order_id }}</div>
 
                             <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Tanggal: </span>{{date('d-M-Y', strtotime($invoice->created_at))}}</div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">{{$status}}</span></div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">{{$invoice->Order->status}}</span></div>
                         </div>
                     </div>
                     <!-- /.col -->
@@ -74,7 +74,7 @@
                         <div class="row mb-2 mb-sm-0 py-25">
                             <div class="d-none d-sm-block col-1">1</div>
                             <div class="col-9 col-sm-5">{{$invoice->Order->pesanan}}</div>
-                            <div class="d-none d-sm-block col-2">2</div>
+                            <div class="d-none d-sm-block col-2">{{$invoice->Order->qty}}</div>
                         </div>
                     </div>
 

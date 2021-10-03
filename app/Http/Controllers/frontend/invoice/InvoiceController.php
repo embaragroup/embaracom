@@ -17,8 +17,7 @@ class InvoiceController extends Controller
 
     public function getInvoice(){
         $invoice = $this->invoiceService->DataOrderFirst();
-        $status = $this->invoiceService->GetStatus();
         session()->forget('cart');
-        return view('frontend.pages.invoice.invoice', compact('invoice', 'status'));
+        return view('frontend.pages.invoice.invoice', compact('invoice'));
     }
 }

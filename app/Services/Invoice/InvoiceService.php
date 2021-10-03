@@ -14,20 +14,6 @@ class InvoiceService {
         $this->invoiceRepository = new InvoiceRepository;
     }
 
-    public function GetStatus(){
-        try {
-            $status = $this->invoiceRepository->getStatusTransaction();
-
-            if (!$status) {
-                return returnCustom('Data Not Exist');
-            }
-
-            return $status;
-        } catch (\Throwable $th) {
-            return returnCustom($th->getMessage());
-        }
-    }
-
     public function DataOrderFirst(){
         try {
             $invoiceFirst = $this->invoiceRepository->DataOrderFirst();

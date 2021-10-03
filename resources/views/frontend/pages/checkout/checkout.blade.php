@@ -30,14 +30,18 @@
                                   </div>
                                   <span class="text-muted">Rp. {{number_format($details['price'])}}</span>
                                 </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <h6 class="my-0" id="biayaAplikasi">Biaya Aplikasi</h6>
+                                    <span class="text-muted">Rp. 5,000</span>
+                                </li>
                                 @php $total = 0 @endphp
                                 @foreach((array) session('cart') as $id => $details)
-                                    @php $total += $details['price'] * $details['quantity'] @endphp
+                                    @php $total += $details['price'] * $details['quantity'] + 5000 @endphp
                                 @endforeach
                                 <li class="list-group-item d-flex justify-content-between">
                                   <span>Total (Rp)</span>
                                   <strong id="totalCart">Rp. {{number_format($total)}}</strong>
-                              </li>
+                                </li>
                           @endforeach
                       @endif
                 </ul>

@@ -92,3 +92,4 @@ Route::group(['prefix' => 'admin-embara', 'namespace' => 'backend'], function(){
         Route::get('/rajaongkir/getKota', [RajaOngkirController::class, 'getDataKota']);
     });
 });
+

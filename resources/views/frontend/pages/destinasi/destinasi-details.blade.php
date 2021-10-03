@@ -33,14 +33,16 @@
                     </div>
 
                     <div class="row mt-4">
-                        @foreach (json_decode($paketTrip->detail_image) as $image)
-                            <div class="col-sm-4 col-6">
-                                <div>
-                                    <img src="{{ Storage::url($image) }}" alt="Image Not Found" class="img-fluid" />
+                        @if ($paketTrip->detail_image != "")
+                            @foreach (json_decode($paketTrip->detail_image) as $image)
+                                <div class="col-sm-4 col-6">
+                                    <div>
+                                        <img src="{{ Storage::url($image) }}" alt="Image Not Found" class="img-fluid" />
+                                    </div>
+                                    <br>
                                 </div>
-                                <br>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </div>
                 </div>
 

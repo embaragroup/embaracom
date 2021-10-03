@@ -14,6 +14,7 @@ use App\Http\Controllers\frontend\destinasi\DestinasiController;
 use App\Http\Controllers\frontend\home\HomeController;
 use App\Http\Controllers\frontend\checkout\NotifCheckoutController;
 use App\Http\Controllers\frontend\invoice\InvoiceController;
+use App\Http\Controllers\frontend\kategoriTrip\KategoriTripController as KategoriTripKategoriTripController;
 use App\Http\Controllers\frontend\order\OrderController;
 use App\Http\Controllers\frontend\tentangKami\TentangKamiController;
 
@@ -23,6 +24,8 @@ Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
     Route::get('tentang', [TentangKamiController::class, 'index']);
     Route::get('destinasi', [DestinasiController::class, 'index']);
     Route::get('destinasi-details/{id?}', [DestinasiController::class,'details']);
+    Route::get('kategori-trip', [KategoriTripKategoriTripController::class,'index']);
+    Route::get('kategori-trip/detail/{id?}', [KategoriTripKategoriTripController::class,'destinasi']);
 
     Route::middleware(['auth'])->group(function(){
         Route::get('cart', [DestinasiController::class,'cart'])->name('cart');
@@ -89,3 +92,4 @@ Route::group(['prefix' => 'admin-embara', 'namespace' => 'backend'], function(){
         Route::get('/rajaongkir/getKota', [RajaOngkirController::class, 'getDataKota']);
     });
 });
+

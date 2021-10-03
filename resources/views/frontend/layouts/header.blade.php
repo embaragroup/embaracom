@@ -37,7 +37,7 @@
 
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/destinasi')}}">Semua Destinasi Trip</a>
-                        <a class="dropdown-item" href="testimonials.html">Kategori Destinasi Trip</a>
+                        <a class="dropdown-item" href="{{ url('/kategori-trip') }}">Kategori Destinasi Trip</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

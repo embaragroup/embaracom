@@ -19,4 +19,9 @@ class PaketTripRepository{
     {
         return PaketTrip::find($id);
     }
+
+    public function paketTripFindByKategoriTripId($id)
+    {
+        return PaketTrip::with(['KategoriTrip'])->where('kategori_trip_id', $id)->get();
+    }
 }

@@ -33,7 +33,6 @@ Route::group(['prefix' => '/', 'namespace' => 'frontend'], function(){
         Route::get('checkout-details', [CheckoutController::class, 'checkout']);
         Route::post('order', [OrderController::class, 'PostOrder']);
         Route::get('invoice', [InvoiceController::class, 'getInvoice']);
-        Route::get('payment-notif', [NotifCheckoutController::class, 'paymentNotif']);
     });
 });
 

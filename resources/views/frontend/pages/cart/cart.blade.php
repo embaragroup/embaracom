@@ -55,7 +55,7 @@
                                     </td>
                                     <td data-th="Price">Rp. {{ number_format($details['price']) }}</td>
                                     <td data-th="Quantity">
-                                        <input type="number" value="{{ $details['quantity'] }}"
+                                        <input type="number" name="qty" value="{{ $details['quantity'] }}"
                                             class="form-control quantity update-cart" />
                                     </td>
                                     <td data-th="Subtotal" class="text-center">Rp.
@@ -72,7 +72,7 @@
                     <tr>
                         <td colspan="5" class="text-right">
                             <p class="total"><strong>Total: Rp.</strong>
-                                <input name="total" class="text-center" value="{{ number_format($total) }}" readonly />
+                                <input name="total" class="text-center" value="{{ $total }}" readonly />
                             </p>
                         </td>
                     </tr>

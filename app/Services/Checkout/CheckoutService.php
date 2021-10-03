@@ -23,17 +23,20 @@ class CheckoutService {
                 return returnCustom('Silakan Buat Order Terlebih Dahulu');
             }
 
-            Order::create([
-                'id' => $params['transaction_details']['order_id'],
+            $order = Order::create([
+                'order_id' => $params['transaction_details']['order_id'],
                 'first_name' => $params['customer_details']['first_name'],
+                'last_name' => $params['customer_details']['last_name'],
                 'email' => $params['customer_details']['email'],
                 'pesanan' => $request['pesanan'],
+                'qty' => $request['qty'],
                 'total' => $params['transaction_details']['gross_amount'],
-                'status' => 'Belum Dibayar'
+                'status' => 'NULL'
             ]);
+            $orderId = $order->id;
 
             Invoice::create([
-                'order_id' => $params['transaction_details']['order_id'],
+                'order_id' => $orderId,
             ]);
 
             return $params;

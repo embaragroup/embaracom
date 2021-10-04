@@ -212,7 +212,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $item->kategori_trip }}</h5>
                                     <hr>
-                                    <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+                                    <a href="{{ url('kategori-trip/detail/'.$item->id) }}" class="btn btn-primary btn-sm">Lihat destinasi</a>
                                 </div>
                             </div>
                         </div>

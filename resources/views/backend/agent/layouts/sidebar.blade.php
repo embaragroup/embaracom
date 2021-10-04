@@ -31,7 +31,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/pakettrip')}}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Paket Trip Index</span></a>
+                    <span>Paket Trip</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/pakettrip')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Orders</span></a>
             </li>
 
             <!-- Divider -->

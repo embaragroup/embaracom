@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\paketTrip\PaketTripController;
 use App\Http\Controllers\backend\auth\AuthEmbaraController;
 use App\Http\Controllers\backend\kategoriTrip\kategoriTripController;
+use App\Http\Controllers\backend\orderAgent\OrderAgentController;
 use App\Http\Controllers\backend\rajaOngkir\RajaOngkirController;
 use App\Http\Controllers\backend\registerAgent\RegisterAgentController;
 use App\Http\Controllers\frontend\checkout\CheckoutController;
@@ -56,6 +57,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend'], function(){
         Route::get('/getKotaList/{id}', [PaketTripController::class, 'getDataKota']);
         Route::post('/save-pakettrip/{id?}', [PaketTripController::class, 'saveAndEdit']);
         Route::get('/delete/{id?}', [PaketTripController::class, 'delete']);
+
+        // Orders
+        Route::get('/orders', [OrderAgentController::class, 'index']);
     });
 
 });
